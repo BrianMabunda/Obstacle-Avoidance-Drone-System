@@ -11,9 +11,6 @@ jobs:
       - uses: muesli/readme-scribe@v0.1
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-        with:
-          template: "templates/README.md.tpl"
-          writeTo: "README.md"
       - name: Commit changes
         run: |
           git config --global user.name "readme-scribe 🤖"
