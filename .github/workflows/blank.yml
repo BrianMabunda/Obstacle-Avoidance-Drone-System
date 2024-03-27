@@ -1,20 +1,18 @@
-name: Update README
-on:
-  push:
-    branches:
-      - main
+name: scp files
+on: [push]
 jobs:
-  markscribe:
+
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: muesli/readme-scribe@v0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-      - name: Commit changes
-        run: |
-          git config --global user.name "readme-scribe 🤖"
-          git config --global user.email "actions@github.com"
-          git add README.md
-          git commit -m "Update generated README"
-          git push
+    - uses: actions/checkout@v4
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: 178.62.244.94
+        username: projects_user
+        password: egd_idd_08G!
+        port: 22
+        source: "README.md"
+        target: /var/www/projects/220057976
