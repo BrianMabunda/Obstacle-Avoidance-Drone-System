@@ -14,3 +14,5 @@ Problem Statements
 Energy-Efficient Navigation: What strategies can be employed to optimize energy consumption during obstacle avoidance maneuvers?
 -Generalization Across Environments: How can we ensure that our obstacle avoidance algorithms generalize well across different environments, from indoor spaces to outdoor landscapes?
 This project aims to contribute to the advancement of drone technology, making UAVs safer, more efficient, and adaptable to various operational scenarios.
+
+Testing
